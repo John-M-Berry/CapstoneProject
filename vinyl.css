@@ -1,5 +1,4 @@
- 
-/* *, */
+
 *::before, *::after {
   box-sizing: border-box;
   padding: 0;
@@ -17,29 +16,32 @@ body {
   color: cyan;
 }
 header {
-  padding: 10px;
+  padding: 5px;
   min-height: 15vh;
-  height: 250px;
-
+  /* height: 250px; */
+  line-height: 1cm;
   border: 3px solid #ddd;
   border-radius: 10px;
+  
 }
 a.artist {
+  display: inline-block;
   font-size: 1rem;
   cursor: pointer;
- /* text-decoration: underline;
-  */
   color: orange;
-  text-transform: capitalize;
   text-transform: capitalize !important;
   margin: 0 1rem;
+  /* background-color: navy; */
+  border-radius: 5px;
+  /* padding: 3px; */
+  /* padding-right: 3px; */
 }
 a.artist.active {
-  text-transform: capitalize;
- /* text-decoration: underline overline;
-  */
-  text-decoration: overline;
-  color: gold;
+  text-transform: capitalize !important;
+  color: navy;
+  background-color: cyan;
+  border-radius: 5px;
+  padding:0px 2px;
 }
 main {
   display: flex;
@@ -48,8 +50,6 @@ main {
   border: 3px solid #ddd;
   border-radius: 10px;
   margin: auto;
-  align-items: center;
-  height: 15vh;
   padding-left: 2rem;
 }
 footer {
@@ -58,9 +58,7 @@ footer {
   height: 200px;
   padding: 1rem;
 }
-ul {
- /* border: 5px solid orange;
-  */
+ol {
   width: 95%;
   height: 200px;
   display: flex;
@@ -79,33 +77,46 @@ span.album {
   margin: 0 1rem;
 }
 label, input {
+  width: 100px;
   font-size: 1.2rem;
   background-color: rgb(160, 160, 160);
   height: 30px;
 }
 main > p {
+  background-color: darkkhaki;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
- /* padding: 1rem;
-  */
+  flex-wrap: wrap;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 2px;
 }
 main > p:last-of-type {
- /* padding-left: calc(3rem + 15ch);
-  */
-  padding-left: 30px ;
+  padding: 2px ;
+  margin-left: 24px;
+  background-color: initial;
 }
 label {
-  flex: 10ch 0 0;
   padding: 0.2rem 1rem;
   background-color: navy;
   border-radius: 15px;
   margin-right: 5px;
+  padding-bottom: 8px;
   text-align: center;
 }
 input {
-  flex: 30ch 0 0;
+  width: 12rem;
+  /* flex: 30ch 0 0; */
   padding: 0.2rem 1rem;
+  margin-right: 25px;
+}
+#album {
+  width: 375px;
+}
+#catalog {
+  width: 100px;
+  padding: 3px;
 }
 button {
   font-size: 1.2rem;
