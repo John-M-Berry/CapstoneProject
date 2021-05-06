@@ -3,8 +3,10 @@ const APP = {
   keys: [],
   init() {
     //start the app
-    let catNum ="";
+    let catNum = "";
     document.getElementById('btnSave').addEventListener('click', APP.saveAlbum);
+    document.getElementById('btnExp').addEventListener('click', APP.lsExport);
+    // document.getElementById('btnEdit').addEventListener('click', APP.lsEdit);
     document.querySelector('header').addEventListener('click', APP.loadAlbum);
     APP.loadArtists();
   },
@@ -35,7 +37,7 @@ const APP = {
       }
       album = tmpalb.join(" ");
 
-      alb2=album+" ( "+catalog+" )";
+      alb2 = album + " ( " + catalog + " )";
 
       albums.push(alb2);
       // albums.push(album);
@@ -46,22 +48,13 @@ const APP = {
       document.getElementById('album').value = '';
       document.getElementById('catalog').value = '';
 
-      var _myArray = JSON.stringify(localStorage); //indentation in json format, human readable
-    
-var vLink = document.createElement('a'),
-vBlob = new Blob([_myArray], {type: "octet/stream"}),
-vName = 'storage.json',
-vUrl = window.URL.createObjectURL(vBlob);
-vLink.setAttribute('href', vUrl);
-vLink.setAttribute('download', vName );
-vLink.click();
-console.log(vName);
-      
+
+
       APP.loadArtists();
     }
   },
   loadArtists() {
-    
+
     let num = localStorage.length;
     if (num) {
       APP.keys = []; //reset the keys array
@@ -69,16 +62,16 @@ console.log(vName);
       console.log(localStorage);
       for (let i = 0; i < num; i++) {
         let key = localStorage.key(i);
-        console.log(key);
+        // console.log(key);
         if (key.startsWith(APP.keybase)) {
           APP.keys.push(key);
         }
       }
-      
+
       APP.keys.sort();
       APP.buildNav();
     }
-    
+
 
   },
   buildNav() {
@@ -91,7 +84,7 @@ console.log(vName);
     APP.keys.forEach((key) => {
       //create a new anchor in the header for each artist
       let a = document.createElement('a');
-
+console.log(a);
       a.className = 'artist';
       a.textContent = key.replace(APP.keybase, '');
 
@@ -130,16 +123,42 @@ console.log(vName);
     // let df = document.createDocumentFragment();
     albums.forEach((album) => {
       let span = document.createElement('span');
+
       span.className = 'album';
-      foot.innerHTML = '<ol>' + albums.map(function (alb) {
+
+      foot.innerHTML =  '<ol>' + albums.map(function (alb) {
         return '<li>' + alb + '</li>';
       }).join('') + '</ol>';
     });
   },
+  lsEdit(ev) {
+
+    let foot = document.querySelector('footer');
+    foot.innerHTML = '';
+
+// foot.innerHTML='<h1>'+"This is an H1"+'</h1>';
+// document.getElementById("edit").innerHTML='<p>'+
+// // '<label for="editKey">Item #</label>'
+// '<input type="text" id="editKey" />'+
+// '</p>';
+
+  },
+  lsExport(ev) {
+    var _myArray = JSON.stringify(localStorage);
+    var vLink = document.createElement('a'),
+      vBlob = new Blob([_myArray], { type: "octet/stream" }),
+      vName = 'storage.json',
+      vUrl = window.URL.createObjectURL(vBlob);
+    vLink.setAttribute('href', vUrl);
+    vLink.setAttribute('download', vName);
+    vLink.click();
+
+    console.log(vName);
+  },
 };
 
-  
-  
+
+
 
 
 document.addEventListener('DOMContentLoaded', APP.init);

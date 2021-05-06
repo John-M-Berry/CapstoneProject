@@ -11,29 +11,50 @@ html {
   line-height: 1.5;
 }
 body {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   background-color:purple;
   color: cyan;
+  background-image: url("images/addeof.jpg");
+  background-size: cover;
+  
+}
+#top{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  color: purple;
+}
+#bottom{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  color: purple;
+  padding: 5px;
 }
 header {
-  padding: 5px;
+  padding: 3px;
   min-height: 15vh;
-  /* height: 250px; */
+  height: 165px;
   line-height: 1cm;
   border: 3px solid #ddd;
   border-radius: 10px;
-  
+  background-color: rgba(137,142,35,.7);
+  overflow: auto;
 }
 a.artist {
   display: inline-block;
   font-size: 1rem;
   cursor: pointer;
-  color: orange;
+  /* color: orange; */
+  color: rgb(0, 0, 0);
   text-transform: capitalize !important;
-  margin: 0 1rem;
-  /* background-color: navy; */
+  /* margin: 0 1rem; */
+  margin: 2px;
+  background-color: olivedrab;
   border-radius: 5px;
-  /* padding: 3px; */
+  padding: 0 5px;
   /* padding-right: 3px; */
 }
 a.artist.active {
@@ -51,16 +72,21 @@ main {
   border-radius: 10px;
   margin: auto;
   padding-left: 2rem;
+  background-color: lightblue;
 }
 footer {
   border: 3px solid #ddd;
   border-radius: 10px;
-  height: 200px;
-  padding: 1rem;
+  min-width: 150px;
+  height: 250px;
+  /* padding: 1rem; */
+  margin: auto;
+  background-color: lightseagreen;
+  opacity: .75;
 }
 ol {
   width: 95%;
-  height: 200px;
+  height: 225px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -68,6 +94,9 @@ ol {
 }
 li{
   font-size: 20px;
+  /* color: navy; */
+  color: black;
+ 
 }
 span.album {
   height: 150px;
@@ -77,7 +106,7 @@ span.album {
   margin: 0 1rem;
 }
 label, input {
-  width: 100px;
+  /* width: 100px; */
   font-size: 1.2rem;
   background-color: rgb(160, 160, 160);
   height: 30px;
@@ -115,14 +144,16 @@ input {
   width: 375px;
 }
 #catalog {
-  width: 100px;
+  width: 125px;
   padding: 3px;
 }
 button {
+  height: 31px;
   font-size: 1.2rem;
   background-color: cyan;
   color: navy;
-  padding: 0.2rem 1rem;
+  /* padding: 0.2rem 1rem; */
   cursor: pointer;
   border-radius: 25px;
+  margin: 0 5px;
 }

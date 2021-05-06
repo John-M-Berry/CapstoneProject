@@ -1,40 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
-    <title>Vinyl Album List</title>
-    <link rel="stylesheet" href="vinyl.css" />
-  </head>
-  <body>
 
-    <header>
-      <!-- Artist list goes here -->
-    </header>
-    <main>
-      <p>
-        <label for="artist">Artist</label>
-        <input type="text" id="artist" />
-      </p>
-      <p>
-        <label for="album">Album</label>
-        <input type="text" id="album" />
-      </p>
-      <p>
-        <label for="catalog">Catalog</label>
-        <input type="text" id="catalog" />
-      </p>
-      <p>
-        <button id="btnSave">SAVE</button>
-      </p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <title>Vinyl Album List</title>
+  <link rel="stylesheet" href="vinyl.css" />
+</head>
 
-    </main>
-    
-    <footer>
-      <!-- Album list goes here -->
-    </footer>
-    <script src="vinyl.js"></script>
-  </body>
+<body>
+
+  <div id="top">
+    <img src="images/vinyl3.png" alt="Vinyl Album" width="100" height="80">
+    <h1>My Albums Catalog</h1>
+    <img src="images/vinyl3.png" alt="Vinyl Album" width="100" height="80">
+  </div>
+  <header>
+    <!-- Artist list goes here -->
+  </header>
+  <main>
+    <p>
+      <label for="artist">Artist</label>
+      <input type="text" id="artist" />
+    </p>
+    <p>
+      <label for="album">Album</label>
+      <input type="text" id="album" />
+    </p>
+    <p>
+      <label for="catalog">Catalog</label>
+      <input type="text" id="catalog" />
+    </p>
+    <br>
+    <p>
+      <button id="btnSave">SAVE</button>
+
+      <!-- <button id="btnEdit">EDIT</button> -->
+
+      <button id="btnExp">EXPORT</button>
+    </p>
+    <br>
+    <div id="edit">
+
+    </div>
+
+  </main>
+
+  <footer>
+
+    <!-- Album list goes here -->
+  </footer>
+  <div id="bottom">
+    <img src="images/vinyl1.png" alt="Vinyl Album" width="120" height="80">
+    <h6>MyAlbumsCatalog v1.5 - Copyright 2021 - Bluegrass IT Computer Services & Web Design</h6>
+    <img src="images/vinyl2.png" alt="Vinyl Album" width="120" height="80">
+  </div>
+  <script src="vinyl.js"></script>
+</body>
+
 </html>
